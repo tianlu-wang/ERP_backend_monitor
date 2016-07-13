@@ -26,7 +26,7 @@ def theme(files):
                     else:
                         status[line_list[7]] = 1
     if count > 0:
-        avg_time = time_amount * 1000 /count
+        avg_time = time_amount * 1000.0 /count
     else:
         avg_time = 0.0
     return avg_time, count, status

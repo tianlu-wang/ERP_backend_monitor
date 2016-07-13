@@ -93,9 +93,9 @@ def login(files):
 
                     time_avg += float(line_list[-3])
     if len(ips) == 0:
-        time_avg = 0
+        time_avg = 0.0
     else:
-        time_avg = time_avg * 1000/len(ips)
+        time_avg = time_avg * 1000.0/len(ips)
     locations = ip_location(ips)
     return locations, is_facebook, is_android, is_ios, time_avg
 
@@ -126,8 +126,8 @@ def signup(files):
 
                     time_avg += float(line_list[-3])
     if len(ips) == 0:
-        time_avg = 0
+        time_avg = 0.0
     else:
-        time_avg = time_avg * 1000/len(ips)
+        time_avg = time_avg * 1000.0/len(ips)
     locations = ip_location(ips)
     return locations, is_android, is_ios, time_avg

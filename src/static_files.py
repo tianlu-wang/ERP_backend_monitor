@@ -43,19 +43,19 @@ def static_files(files):
                     elif line_list[7] == '304':
                         app_js[2] += 1
     if vendor_css[1] > 0:
-        vendor_css[0] = vendor_css[0] * 1000 / vendor_css[1]
+        vendor_css[0] = vendor_css[0] * 1000.0 / vendor_css[1]
     else:
         vendor_css[0] = 0.0
     if vendor_js[1] > 0:
-        vendor_js[0] = vendor_js[0] * 1000 / vendor_js[1]
+        vendor_js[0] = vendor_js[0] * 1000.0 / vendor_js[1]
     else:
         vendor_js[0] = 0.0
     if app_css[1] > 0:
-        app_css[0] = app_css[0] * 1000 / app_css[1]
+        app_css[0] = app_css[0] * 1000.0 / app_css[1]
     else:
         app_css[0] = 0.0
     if app_js[1] > 0:
-        app_js[0] = app_js[0] * 1000 / app_js[1]
+        app_js[0] = app_js[0] * 1000.0 / app_js[1]
     else:
         app_js[0] = 0.0
     return vendor_css, vendor_js, app_css, app_js

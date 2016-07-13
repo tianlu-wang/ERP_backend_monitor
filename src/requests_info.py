@@ -39,7 +39,7 @@ def request_info(files):
     avg_time = []
     for i in range(len(requests)):
         if count[i] > 0:
-            avg_time.append(time_amount[i] * 1000 /count[i])
+            avg_time.append(time_amount[i] * 1000.0 /count[i])
         else:
             avg_time.append(0.0)
     return requests, avg_time, count, status
