@@ -81,7 +81,6 @@ value = {
     'time_avg': time_avg,
     'US': locations.get('US', 0),
     'CA': locations.get('CA', 0),
-    'AE': locations.get('AE', 0),
     'KW': locations.get('KW', 0),
     'AU': locations.get('AU', 0),
     'other': locations.get('other', 0)
@@ -91,11 +90,11 @@ values.append(value)
 # theme
 avg_time, count, status = theme(files)
 measurements.append('theme')
-value = {
-    'avg_time': avg_time,
-    'count': count,
-    'status': status
-}
+value = {}
+value['avg_time'] = avg_time
+value['count'] = count
+for key in status.keys():
+    value[key] = status[key]
 values.append(value)
 
 
