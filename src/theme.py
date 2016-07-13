@@ -5,7 +5,7 @@ from config import time_node
 def theme(files):
     time_amount = 0.0
     count = 0
-    status = {}
+    status = {'200':0}
 
     pre_time = str(time_node)[:-7].replace(" ", "T") + "+08:00"
 
