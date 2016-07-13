@@ -13,7 +13,8 @@ values = []
 # for every request
 requests, avg_time, count, status = request_info(files)
 for request in requests:
-    measurements.append(request.split('/')[-1])
+    request_split = request.split('/')
+    measurements.append(request_split[-2]+'_'+request_split[-1])
 
 for i in range(len(requests)):
     value = {}

@@ -1,6 +1,6 @@
 __author__ = 'TianluWang'
 from config import time_node, requests
-
+import re
 
 def request_info(files):
 
@@ -18,8 +18,16 @@ def request_info(files):
                 line_list = line.split(' ')
                 if line_list[3][1:-1] < pre_time:
                     continue
-                if line_list[5] in requests:
-                    index = requests.index(line_list[5])
+                url = line_list[5]
+                if '/bc/' not in url:
+                    continue
+                match = re.match(r'(.*)\d', url)
+                if match is not None:
+                    url_reverse = url[::-1]
+                    pos = url_reverse.index('/')
+                    url = url[:-(pos+1)]
+                if url in requests:
+                    index = requests.index(url)
                     if line_list[7] == '200':
                         time_amount[index] += float(line_list[-3])
                         count[index] += 1
