@@ -6,9 +6,9 @@ host = '47.88.85.15'
 port = 8086
 user = 'grafana'
 password = '123456'
-dbname = 'request_status'
+dbname = 'erp_backend'
 
-time_node = current_time = datetime.now() - timedelta(minutes=5)
+time_node = current_time = datetime.now() - timedelta(minutes=10)  # TODO
 requests = ['/bc/shop/checkout/create_order',
             '/bc/shop/itemsCount',
             '/bc/shop/payment',
@@ -34,6 +34,9 @@ requests = ['/bc/shop/checkout/create_order',
             '/bc/shop/cart/delete',
             '/bc/shop/product/favorites/view',
             '/bc/shop/payment/tx',
-            '/bc/shop/payment/order']
+            '/bc/shop/payment/order',
+            '/bc/auth/login',
+            '/bc/auth/facebook/login',
+            '/bc/auth/signup']
 files = ['/var/log/nginx/access.log', '/var/log/nginx/access.log.1']  # TODO
 # files = ['./data/access.log']
