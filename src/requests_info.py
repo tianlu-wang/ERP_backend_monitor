@@ -17,6 +17,8 @@ def request_info(files):
                 if line_list[3][1:-7] < pre_time:
                     continue
                 url = line_list[5]
+                if '/bc/' not in url:
+                    continue
                 match = re.match(r'(.*)\d', url)
                 if match is not None:
                     url_reverse = url[::-1]
