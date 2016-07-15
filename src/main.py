@@ -4,8 +4,8 @@ from static_files import static_files
 from user import app_open
 from config import files
 
-#request_info(files)
-#app_open(files)
+request_info(files)
+app_open(files)
 static_files(files)
 
 
