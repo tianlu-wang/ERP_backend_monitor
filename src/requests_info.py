@@ -27,7 +27,7 @@ def request_info(files):
                 if url in requests:
                     url_split = url.split('/')
                     measurement = url_split[-2]+'_'+url_split[-1]
-                    time = line_list[3][1:-7]
+                    time = line_list[3][1:-7] + 'Z'
                     value = {}
                     value['ip'] = line_list[0]
                     value['country'] = ip_location(value['ip'])

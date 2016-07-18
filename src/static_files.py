@@ -19,7 +19,7 @@ def static_files(files):
                 tmp = line_list[5].split('/')[-1]
                 if 'vendor' in tmp or 'app' in tmp:
                     measurement = 'static_files'
-                    time = line_list[3][1:-7]
+                    time = line_list[3][1:-7] + 'Z'
                     value = {}
                     value['ip'] = line_list[0]
                     value['country'] = ip_location(value['ip'])

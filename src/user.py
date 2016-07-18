@@ -20,7 +20,7 @@ def app_open(files):
                 url = line_list[5]
                 if '/club_factory/init' in url:
                     measurement = 'app_location'
-                    time = line_list[3][1:-7]
+                    time = line_list[3][1:-7] + 'Z'
                     value = {}
                     value['ip'] = line_list[0]
                     value['country'] = ip_location(value['ip'])
