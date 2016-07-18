@@ -20,7 +20,7 @@ def static_files(files):
                 if 'vendor' in tmp or 'app' in tmp:
                     measurement = 'static_files'
                     CST_time_s = line_list[3][1:-7].replace("T", " ")
-                    CST_time = datetime.strftime(CST_time_s, '%Y-%m-%d %H:%M:%S')
+                    CST_time = datetime.strptime(CST_time_s, '%Y-%m-%d %H:%M:%S')
                     UTC_time = CST_time - timedelta(hours=8)
                     time = str(UTC_time).replace(" ", "T")
                     value = {}
