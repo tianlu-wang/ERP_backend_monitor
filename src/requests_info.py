@@ -33,7 +33,7 @@ def request_info(files):
                     value['country'] = ip_location(value['ip'])
 
                     value['status'] = line_list[7]
-                    value['time'] = line_list[-3]
+                    value['time_cost'] = line_list[-3]
                     value['Android'] = 'Android' in line
                     value['iPhone'] = 'iPhone' in line
                     value['url'] = line_list[5]
