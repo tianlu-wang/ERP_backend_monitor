@@ -1,7 +1,7 @@
 __author__ = 'TianluWang'
 from config import time_node, requests
 from json_body_makeup import json_body_makeup
-from write_db import write_db
+from datetime import datetime, timedelta
 from user import ip_location
 import re
 
@@ -27,7 +27,10 @@ def request_info(files):
                 if url in requests:
                     url_split = url.split('/')
                     measurement = url_split[-2]+'_'+url_split[-1]
-                    time = line_list[3][1:-7] + 'Z'
+                    CST_time_s = line_list[3][1:-7].replace("T", " ")
+                    CST_time = datetime.strftime(CST_time_s, '%Y-%m-%d %H:%M:%S')
+                    UTC_time = CST_time - timedelta(hours=8)
+                    time = str(UTC_time).replace(" ", "T")
                     value = {}
                     value['ip'] = line_list[0]
                     value['country'] = ip_location(value['ip'])

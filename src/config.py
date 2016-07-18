@@ -8,7 +8,7 @@ user = 'grafana'
 password = '123456'
 dbname = 'erp_backend'
 
-time_node = current_time = datetime.now() - timedelta(hours=8, minutes=10)  # TODO Influxdb only support UTC time
+time_node = current_time = datetime.now() - timedelta(minutes=10)  # TODO Influxdb only support UTC time
 requests = ['/bc/shop/checkout/create_order',
             '/bc/shop/itemsCount',
             '/bc/shop/payment',

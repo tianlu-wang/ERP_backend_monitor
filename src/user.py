@@ -2,7 +2,7 @@ __author__ = 'TianluWang'
 from config import time_node
 from geoip import geolite2
 from json_body_makeup import json_body_makeup
-from write_db import write_db
+from datetime import datetime, timedelta
 import logging
 
 
@@ -20,7 +20,10 @@ def app_open(files):
                 url = line_list[5]
                 if '/club_factory/init' in url:
                     measurement = 'app_location'
-                    time = line_list[3][1:-7] + 'Z'
+                    CST_time_s = line_list[3][1:-7].replace("T", " ")
+                    CST_time = datetime.strftime(CST_time_s, '%Y-%m-%d %H:%M:%S')
+                    UTC_time = CST_time - timedelta(hours=8)
+                    time = str(UTC_time).replace(" ", "T")
                     value = {}
                     value['ip'] = line_list[0]
                     value['country'] = ip_location(value['ip'])
