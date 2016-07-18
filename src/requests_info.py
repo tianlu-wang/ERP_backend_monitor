@@ -39,6 +39,10 @@ def request_info(files):
                     value['time_cost'] = line_list[-3]
                     value['Android'] = 'Android' in line
                     value['iPhone'] = 'iPhone' in line
+                    if 'Android' in line:
+                        value['ios_or_an'] = 0
+                    else:
+                        value['ios_or_an'] = 1
                     value['url'] = line_list[5]
                     json_body = json_body_makeup(measurement, time, value)
                     json_bodys.append(json_body)
