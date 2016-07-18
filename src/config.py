@@ -8,7 +8,7 @@ user = 'grafana'
 password = '123456'
 dbname = 'erp_backend'
 
-time_node = current_time = datetime.now() - timedelta(minutes=10)  # TODO
+time_node = current_time = datetime.now() - timedelta(minutes=5)  # TODO
 requests = ['/bc/shop/checkout/create_order',
             '/bc/shop/itemsCount',
             '/bc/shop/payment',

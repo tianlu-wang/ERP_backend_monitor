@@ -8,6 +8,7 @@ import logging
 
 # find out user is android or ios
 def app_open(files):
+    json_bodys = []
     pre_time = str(time_node)[:-7].replace(" ", "T")
 
     for file in files:
@@ -29,8 +30,9 @@ def app_open(files):
                     value['iPhone'] = 'Club_Factory_UIWebView' in line
                     value['url'] = line_list[5]
                     json_body = json_body_makeup(measurement, time, value)
-                    write_db(json_body)
-    return
+                    json_bodys.append(json_body)
+
+    return json_bodys
 
 
 # find out the location of customer

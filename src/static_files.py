@@ -6,6 +6,7 @@ from user import ip_location
 
 
 def static_files(files):
+    json_bodys = []
 
     pre_time = str(time_node)[:-7].replace(" ", "T")
 
@@ -28,5 +29,6 @@ def static_files(files):
                     value['iPhone'] = 'iPhone' in line
                     value['url'] = line_list[5]
                     json_body = json_body_makeup(measurement, time, value)
-                    write_db(json_body)
-    return
+                    json_bodys.append(json_body)
+
+    return json_bodys

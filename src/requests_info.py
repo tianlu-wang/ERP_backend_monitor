@@ -7,7 +7,7 @@ import re
 
 
 def request_info(files):
-
+    json_bodys = []
     pre_time = str(time_node)[:-7].replace(" ", "T")
 
     for file in files:
@@ -38,5 +38,6 @@ def request_info(files):
                     value['iPhone'] = 'iPhone' in line
                     value['url'] = line_list[5]
                     json_body = json_body_makeup(measurement, time, value)
-                    write_db(json_body)
-    return
+                    json_bodys.append(json_body)
+
+    return json_bodys
