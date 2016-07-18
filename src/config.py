@@ -6,7 +6,7 @@ host = '47.88.85.15'
 port = 8086
 user = 'grafana'
 password = '123456'
-dbname = 'erp_backend'
+dbname = 'erp_backend_new'
 
 time_node = current_time = datetime.now() - timedelta(minutes=10)  # TODO Influxdb only support UTC time
 requests = ['/bc/shop/checkout/create_order',
