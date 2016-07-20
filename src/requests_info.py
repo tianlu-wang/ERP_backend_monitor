@@ -36,7 +36,7 @@ def request_info(files):
                     value['country'] = ip_location(value['ip'])
 
                     value['status'] = line_list[7]
-                    value['time_cost'] = int(line_list[-3])
+                    value['time_cost_new'] = int(line_list[-3])
                     value['Android'] = 'Android' in line
                     value['iPhone'] = 'iPhone' in line
                     if 'Android' in line:
