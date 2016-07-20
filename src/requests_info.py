@@ -42,7 +42,7 @@ def request_info(files):
                     if 'Android' in line:
                         value['an_or_ios'] = '1'
                     else:
-                        value['ios_or_an'] = '0'
+                        value['an_or_ios'] = '0'
                     value['url'] = line_list[5]
                     json_body = json_body_makeup(measurement, time, value)
                     json_bodys.append(json_body)
