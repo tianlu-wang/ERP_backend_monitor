@@ -32,9 +32,9 @@ def app_open(files):
                     value['Android'] = 'Android' in line
                     value['iPhone'] = 'Club_Factory_UIWebView' in line
                     if 'Android' in line:
-                        value['ios_or_an'] = 0
+                        value['an_or_ios'] = '1'
                     else:
-                        value['ios_or_an'] = 1
+                        value['ios_or_an'] = '0'
                     value['url'] = line_list[5]
                     json_body = json_body_makeup(measurement, time, value)
                     json_bodys.append(json_body)
