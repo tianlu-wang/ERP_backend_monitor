@@ -6,8 +6,8 @@ from datetime import datetime, timedelta
 import logging
 
 
-# find out user is android or ios
-def app_open(files):
+def open_app(files):
+
     json_bodys = []
     pre_time = str(time_node)[:-7].replace(" ", "T")
 
@@ -16,7 +16,7 @@ def app_open(files):
             for line in f.readlines():
                 line_list = line.split(' ')
                 if line_list[3][1:-7] < pre_time:
-                    continue
+                    continue  # skip log before pre_time
                 url = line_list[5]
                 if '/club_factory/init' in url:
                     measurement = 'app_location'
@@ -29,7 +29,7 @@ def app_open(files):
                     value['country'] = ip_location(value['ip'])
                     value['status'] = line_list[7]
                     value['time_cost_new'] = float(line_list[-3])
-                    value['Android'] = 'Android' in line
+                    value['Android'] = 'Android' in line  # boolean cannot be used in grafana "where" clause
                     value['iPhone'] = 'Club_Factory_UIWebView' in line
                     if 'Android' in line:
                         value['an_or_ios'] = '1'
@@ -50,4 +50,4 @@ def ip_location(ip):
         return country
     except Exception,e:
         logging.info(ip)
-        return None
+        return

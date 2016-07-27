@@ -18,5 +18,4 @@ def write_db(json_bodys):
         except Exception, e:
             logging.error(traceback.format_exc())
             return
-
     return

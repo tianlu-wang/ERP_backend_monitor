@@ -2,12 +2,12 @@ __author__ = 'TianluWang'
 from config import time_node
 from json_body_makeup import json_body_makeup
 from datetime import datetime, timedelta
-from user import ip_location
+from open_app import ip_location
 
 
 def static_files(files):
-    json_bodys = []
 
+    json_bodys = []
     pre_time = str(time_node)[:-7].replace(" ", "T")
 
     for file in files:

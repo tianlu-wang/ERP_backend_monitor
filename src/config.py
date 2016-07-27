@@ -1,5 +1,4 @@
 __author__ = 'TianluWang'
-#location: 47.88.87.104:/var/log/nginx
 from datetime import datetime, timedelta
 
 host = '47.88.85.15'
@@ -39,4 +38,4 @@ requests = ['/bc/shop/checkout/create_order',
             '/bc/auth/facebook/login',
             '/bc/auth/signup']
 files = ['/var/log/nginx/access.log', '/var/log/nginx/access.log.1']  # TODO
-# files = ['./data/access.log']
+# files = ['./data/access.log']  # local test data
